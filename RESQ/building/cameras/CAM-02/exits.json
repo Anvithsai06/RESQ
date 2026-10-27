@@ -1,0 +1,5 @@
+{
+  "camera_id": "CAM-02",
+  "exits": [],
+  "notes": "No real footage exists for CAM-02 yet, so no exits have been configured/trusted for it — see building/cameras/CAM-02/zones.json for the same reasoning. An empty list here means RESQ correctly evaluates zero exits for this camera, never that a door was checked and found clear."
+}

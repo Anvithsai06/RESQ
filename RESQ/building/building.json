@@ -1,0 +1,21 @@
+{
+  "building_id": "BLDG-DEMO-01",
+  "name": "Demo Residence — Rear Yard",
+  "address": "123 Example St, Example City",
+  "floors": [
+    {
+      "floor_id": "F1",
+      "name": "Ground Level",
+      "zones": ["DANGER-A", "DANGER-B", "SAFE-OBS", "OBSTRUCTION-1"],
+      "exits": ["EXIT-A", "EXIT-B"],
+      "connectivity": {
+        "DANGER-A": ["EXIT-B", "SAFE-OBS", "DANGER-B"],
+        "DANGER-B": ["EXIT-A", "OBSTRUCTION-1"],
+        "OBSTRUCTION-1": ["EXIT-A", "EXIT-B"],
+        "SAFE-OBS": ["EXIT-B"]
+      }
+    }
+  ],
+  "cameras": ["CAM-01"],
+  "notes": "Scene-specific config for the hackathon demo, calibrated by human review of the actual CAM-01 footage (a residential rear yard). Not a universal floor-plan inference — every zone, exit, and connectivity edge here is human-curated for this one camera view."
+}

@@ -1,0 +1,25 @@
+{
+  "camera_id": "CAM-01",
+  "coordinate_space": {
+    "width": 720,
+    "height": 1280,
+    "notes": "Image-space pixel coordinates for CAM-01's actual video feed (720x1280 portrait), matching building/zones.json. Only the exits listed here are evaluated — see notes below."
+  },
+  "exits": [
+    {
+      "id": "EXIT-A",
+      "label": "Patio Door — House Entry",
+      "polygon": [[515, 615], [685, 615], [685, 775], [515, 775]],
+      "obstruction_persistence_seconds": 5,
+      "trusted": true
+    },
+    {
+      "id": "EXIT-B",
+      "label": "Side Walkway — Yard Egress",
+      "polygon": [[370, 925], [700, 925], [700, 1125], [370, 1125]],
+      "obstruction_persistence_seconds": 5,
+      "trusted": true
+    }
+  ],
+  "notes": "Only exits listed here are evaluated. A detected door that is not configured here is never treated as an emergency exit. Both exits above were identified by human review of the actual CAM-01 footage: EXIT-A is the covered patio doorway back into the house; EXIT-B is the concrete walkway leading out of the yard."
+}

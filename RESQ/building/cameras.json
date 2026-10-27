@@ -1,0 +1,34 @@
+{
+  "cameras": [
+    {
+      "camera_id": "CAM-01",
+      "floor_id": "F1",
+      "name": "Rear Yard Camera",
+      "position": { "x": 0, "y": 0, "z": 3.0 },
+      "orientation_deg": 90,
+      "resolution": [720, 1280],
+      "fps": 30,
+      "covered_zones": ["DANGER-A", "DANGER-B", "SAFE-OBS", "OBSTRUCTION-1"],
+      "covered_exits": ["EXIT-A", "EXIT-B"],
+      "source": "data/demo/emergency_scene.mp4",
+      "zones_config_path": "building/zones.json",
+      "exits_config_path": "building/exits.json",
+      "notes": "Resolution must match the actual feed — building/zones.json and building/exits.json polygons are in this camera's image-space pixels and are not rescaled at runtime."
+    },
+    {
+      "camera_id": "CAM-02",
+      "floor_id": "F1",
+      "name": "Second Camera (not yet configured)",
+      "position": { "x": 0, "y": 0, "z": 3.0 },
+      "orientation_deg": 0,
+      "resolution": null,
+      "fps": null,
+      "covered_zones": [],
+      "covered_exits": [],
+      "source": "data/demo/camera_2.mp4",
+      "zones_config_path": "building/cameras/CAM-02/zones.json",
+      "exits_config_path": "building/cameras/CAM-02/exits.json",
+      "notes": "Demonstrates that the pipeline/API/frontend are genuinely multi-camera-capable (per-camera engine instances, incident state, and media routes), without fabricating a second camera's footage. `source` does not exist yet — resolution is null rather than guessed, and zones/exits are empty rather than copied from CAM-01 (which would be meaningless outside CAM-01's own pixel space). The pipeline skips this camera at runtime (logs why) until a real video is placed at `source` and its resolution/zones/exits are filled in for real. Every API this camera participates in reports its actual unavailable state — see backend/api/media.py and backend/api/incident.py — rather than substituting CAM-01's data."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "priority_weights": {
+    "hazard_exposure": 0.40,
+    "people_in_danger_zones": 0.25,
+    "congestion": 0.20,
+    "exit_obstruction": 0.15
+  },
+  "priority_bands": {
+    "moderate": 30,
+    "high": 45,
+    "critical": 60
+  },
+  "exit_obstruction_persistence_seconds": 5,
+  "exit_evidence_min_confidence": 0.5,
+  "hazard_detection_min_confidence": 0.5,
+  "hazard_persistence_frames": 10,
+  "congestion": {
+    "moderate_occupancy": 3,
+    "high_occupancy": 6
+  },
+  "priority_normalization": {
+    "danger_zone_occupancy_saturation": 5,
+    "exit_obstruction_component_scores": {
+      "CLEAR": 0,
+      "OCCUPIED": 20,
+      "UNCERTAIN": 35,
+      "OBSTRUCTED": 100
+    },
+    "uncertainty_min_confidence": 0.6,
+    "hazard_risk": {
+      "_comment": "Bounded risk factors layered onto the base hazard_exposure score (confidence x persistence-ratio x 100). Both are optional multipliers >= 1.0 — they can only raise a hazard's score toward the 100 ceiling, never lower it. See intelligence/priority/engine.py module docstring for the exact formulas.",
+      "default_flammability": 0.3,
+      "flammability_weight": 0.35,
+      "occupied_zone_bonus": 0.15,
+      "growth_window_seconds": 5.0,
+      "growth_rate_scale": 1.0,
+      "growth_max_boost": 0.25
+    }
+  },
+  "notification": {
+    "critical_priority_threshold": 60,
+    "notification_persistence_seconds": 10,
+    "notification_cooldown_seconds": 120,
+    "provider": "mock"
+  }
+}

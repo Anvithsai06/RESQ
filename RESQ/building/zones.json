@@ -1,0 +1,42 @@
+{
+  "camera_id": "CAM-01",
+  "coordinate_space": {
+    "width": 720,
+    "height": 1280,
+    "notes": "Image-space pixel coordinates for CAM-01's actual video feed (data/demo/emergency_scene.mp4, 720x1280 portrait). Polygons below were calibrated against the real scene and the observed spatial distribution of real detections — they are human-curated for this one camera view, not inferred at runtime. If the camera or its resolution changes, these polygons must be re-calibrated; RESQ does not rescale them automatically."
+  },
+  "zones": [
+    {
+      "id": "DANGER-A",
+      "type": "danger",
+      "label": "Fire Origin — Rear Lawn",
+      "polygon": [[70, 630], [520, 630], [560, 905], [90, 905]],
+      "flammability": 0.75,
+      "flammability_notes": "Dry grass, adjacent wood-plank fence line."
+    },
+    {
+      "id": "DANGER-B",
+      "type": "danger",
+      "label": "Structure Exposure — Patio Edge",
+      "polygon": [[520, 600], [720, 600], [720, 800], [545, 800]],
+      "flammability": 0.85,
+      "flammability_notes": "Covered wood-frame patio directly attached to the house structure — highest exposure if fire spreads."
+    },
+    {
+      "id": "OBSTRUCTION-1",
+      "type": "obstruction",
+      "label": "Patio Clutter — Egress Path",
+      "polygon": [[560, 800], [720, 800], [720, 935], [575, 935]],
+      "flammability": 0.6,
+      "flammability_notes": "Wicker/rattan furniture and stored items on the egress path."
+    },
+    {
+      "id": "SAFE-OBS",
+      "type": "safe_observation",
+      "label": "Front Lawn — Clear Ground",
+      "polygon": [[90, 950], [350, 950], [350, 1180], [90, 1180]],
+      "flammability": 0.15,
+      "flammability_notes": "Open clear lawn, no combustible structures."
+    }
+  ]
+}

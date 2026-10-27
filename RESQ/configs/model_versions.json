@@ -1,0 +1,15 @@
+{
+  "detector": {
+    "name": "yolov8",
+    "weights_path": "models/yolo/best.pt",
+    "hazard_weights_path": "models/yolo/fire_smoke.pt",
+    "trained_on": "Person: stock YOLOv8n, COCO-pretrained (ultralytics official release, class 0 'person'). Fire/smoke: luminous0219/fire-and-smoke-detection-yolov8, YOLOv8n fine-tuned 150 epochs on a custom Roboflow dataset (https://github.com/luminous0219/fire-and-smoke-detection-yolov8). Neither is a RESQ-custom-trained model — both are third-party checkpoints verified before use; see WORKFLOW.md Phase 8 for offline/validated retraining policy before any production use beyond the hackathon demo.",
+    "validated_classes": ["person"],
+    "experimental_classes": ["fire", "smoke"]
+  },
+  "tracker": {
+    "name": "bytetrack",
+    "config_path": "configs/bytetrack.yaml"
+  },
+  "notes": "Controlled, offline, validated updates only. Do not continuously retrain the core detector on raw daily CCTV — see WORKFLOW.md Phase 8."
+}

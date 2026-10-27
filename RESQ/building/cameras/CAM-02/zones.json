@@ -1,0 +1,6 @@
+{
+  "camera_id": "CAM-02",
+  "coordinate_space": null,
+  "zones": [],
+  "notes": "No real footage exists for CAM-02 yet (see building/cameras.json), so no zones have been calibrated against it — an empty zone list is the honest state, not a placeholder guess. Once real footage is supplied, calibrate zones against it the same way building/zones.json's CAM-01 entry was: extract real sample frames, observe where real detections actually land, then curate polygons — never copy CAM-01's polygons, they are meaningless outside CAM-01's own pixel space."
+}

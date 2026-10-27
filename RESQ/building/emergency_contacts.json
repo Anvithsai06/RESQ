@@ -1,0 +1,42 @@
+{
+  "building_id": "BLDG-DEMO-01",
+  "notes": "Human-curated directory of the nearest government/emergency services for this building. RESQ never infers or guesses a recipient — it only notifies services configured here. Update this file, do not hardcode contacts in application code.",
+  "contacts": [
+    {
+      "service_id": "FIRE-01",
+      "service_type": "fire",
+      "name": "City Fire Department — Station 3",
+      "distance_note": "0.4 mi from building",
+      "channels": [
+        { "type": "webhook", "target": "https://example-fire-dept.gov/api/alerts" },
+        { "type": "sms", "target": "+10000000000" },
+        { "type": "email", "target": "dispatch@example-fire-dept.gov" }
+      ],
+      "notify_for_zone_types": ["danger", "obstruction"],
+      "priority_rank": 1
+    },
+    {
+      "service_id": "POLICE-01",
+      "service_type": "police",
+      "name": "City Police Department — Precinct 5",
+      "distance_note": "0.6 mi from building",
+      "channels": [
+        { "type": "webhook", "target": "https://example-pd.gov/api/alerts" },
+        { "type": "email", "target": "dispatch@example-pd.gov" }
+      ],
+      "notify_for_zone_types": ["danger"],
+      "priority_rank": 2
+    },
+    {
+      "service_id": "EMS-01",
+      "service_type": "ems",
+      "name": "County EMS — Unit 12",
+      "distance_note": "0.9 mi from building",
+      "channels": [
+        { "type": "sms", "target": "+10000000001" }
+      ],
+      "notify_for_zone_types": ["danger"],
+      "priority_rank": 3
+    }
+  ]
+}
